@@ -4,7 +4,7 @@
     <section>
       <item>
         <attribute name="label" translatable="yes">Ne_w Saved Search…</attribute>
-        <attribute name="action">search.new</attribute>
+        <attribute name="action">sidebar.search.new</attribute>
         <attribute name="accel">&lt;Primary&gt;s</attribute>
       </item>
     </section>

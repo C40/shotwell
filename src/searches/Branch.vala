@@ -69,8 +69,6 @@ public class Searches.Header : Sidebar.Header, Sidebar.Contextable {
         setup_context_menu();
     }
 
-    private const GLib.ActionEntry[] entries = { { "new", on_new_search } };
-
     private void setup_context_menu() {
         this.builder = new Gtk.Builder ();
         try {
@@ -78,9 +76,6 @@ public class Searches.Header : Sidebar.Header, Sidebar.Contextable {
                             ("/org/gnome/Shotwell/search_sidebar_context.ui");
             var model = builder.get_object ("popup-menu") as GLib.MenuModel;
             this.context_menu = new Gtk.Menu.from_model (model);
-            var group = new GLib.SimpleActionGroup ();
-            group.add_action_entries (entries, this);
-            this.context_menu.insert_action_group ("search", group);
         } catch (Error error) {
             AppWindow.error_message("Error loading UI resource: %s".printf(
                 error.message));
@@ -90,12 +85,6 @@ public class Searches.Header : Sidebar.Header, Sidebar.Contextable {
 
     public Gtk.Menu? get_sidebar_context_menu(Gdk.EventButton? event) {
         return context_menu;
-    }
-
-    private void on_new_search(GLib.SimpleAction action,
-                               GLib.Variant? parameter) {
-        var dialog = new SavedSearchDialog ();
-        dialog.show ();
     }
 }
 

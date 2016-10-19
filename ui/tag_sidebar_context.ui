@@ -3,8 +3,8 @@
   <menu id='popup-menu'>
     <section>
       <item>
-        <attribute name="label" translatable="yes">_New</attribute>
-        <attribute name="action">tag.new</attribute>
+        <attribute name="label" translatable="yes">New _Tag…</attribute>
+        <attribute name="action">sidebar.tag.new</attribute>
       </item>
     </section>
   </menu>

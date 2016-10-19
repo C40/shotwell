@@ -132,8 +132,6 @@ public class Tags.Header : Sidebar.Header, Sidebar.InternalDropTargetEntry,
         setup_context_menu();
     }
 
-    private const GLib.ActionEntry[] entries = { { "new", on_new_tag } };
-
     private void setup_context_menu() {
         this.builder = new Gtk.Builder ();
         try {
@@ -141,9 +139,6 @@ public class Tags.Header : Sidebar.Header, Sidebar.InternalDropTargetEntry,
                             ("/org/gnome/Shotwell/tag_sidebar_context.ui");
             var model = builder.get_object ("popup-menu") as GLib.MenuModel;
             this.context_menu = new Gtk.Menu.from_model (model);
-            var group = new GLib.SimpleActionGroup ();
-            group.add_action_entries (entries, this);
-            this.context_menu.insert_action_group ("tag", group);
         } catch (Error error) {
             AppWindow.error_message("Error loading UI resource: %s".printf(
                 error.message));
@@ -186,13 +181,6 @@ public class Tags.Header : Sidebar.Header, Sidebar.InternalDropTargetEntry,
 
     public Gtk.Menu? get_sidebar_context_menu(Gdk.EventButton? event) {
         return context_menu;
-    }
-    
-    private void on_new_tag (GLib.SimpleAction action,
-                             GLib.Variant? parameter) {
-        NewRootTagCommand creation_command = new NewRootTagCommand();
-        AppWindow.get_command_manager().execute(creation_command);
-        LibraryWindow.get_app().rename_tag_in_sidebar(creation_command.get_created_tag());
     }
 }
 
