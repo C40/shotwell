@@ -436,7 +436,7 @@ public class LibraryWindow : AppWindow {
         }
         
         groups += common_action_group;
-        groups += search_actions.get_action_group();
+        //groups += search_actions.get_action_group();
         
         return groups;
     }
