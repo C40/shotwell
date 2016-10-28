@@ -736,33 +736,22 @@ public class SearchFilterToolbar : Gtk.Revealer {
     
     // Handles ratings filters.
     protected class RatingFilterButton : Gtk.ToolItem {
-        public Gtk.Menu filter_popup = null;
-        public Gtk.Button button;
-        
-        public signal void clicked();
-        
-        public RatingFilterButton() {
-            button = new Gtk.Button();
+        public Gtk.MenuButton button;
+
+        public RatingFilterButton(GLib.MenuModel model) {
+            button = new Gtk.MenuButton();
+
             button.set_image (get_filter_icon(RatingFilter.UNRATED_OR_HIGHER));
             button.set_can_focus(false);
             button.set_relief(Gtk.ReliefStyle.NONE);
             button.set_margin_start(2);
+            button.set_menu_model (model);
 
-            button.clicked.connect(on_clicked);
-            
             set_homogeneous(false);
-            
+
             this.add(button);
         }
-        
-        ~RatingFilterButton() {
-            button.clicked.disconnect(on_clicked);
-        }
-        
-        private void on_clicked() {
-            clicked();
-        }
-        
+
         private Gtk.Widget get_filter_icon(RatingFilter filter) {
             string filename = null;
 
@@ -770,7 +759,7 @@ public class SearchFilterToolbar : Gtk.Revealer {
                 case RatingFilter.ONE_OR_HIGHER:
                     filename = Resources.ICON_FILTER_ONE_OR_BETTER;
                 break;
-                
+
                 case RatingFilter.TWO_OR_HIGHER:
                     filename = Resources.ICON_FILTER_TWO_OR_BETTER;
                 break;
@@ -1042,7 +1031,7 @@ public class SearchFilterToolbar : Gtk.Revealer {
     private SearchFilterActions actions;
     private SavedSearch saved_search = null;
     private SearchBox search_box;
-    private RatingFilterButton rating_button = new RatingFilterButton();
+    private RatingFilterButton rating_button;
     private SavedSearchFilterButton saved_search_button = new SavedSearchFilterButton();
     private bool elide_showing_again = false;
     private SearchViewFilter? search_filter = null;
@@ -1118,11 +1107,9 @@ public class SearchFilterToolbar : Gtk.Revealer {
         
         // Rating button
         var model = this.builder.get_object ("popup-menu") as GLib.MenuModel;
-        rating_button.filter_popup = new Gtk.Menu.from_model (model);
-        rating_button.filter_popup.attach_to_widget (rating_button, null);
+        rating_button = new RatingFilterButton (model);
         rating_button.set_label(_("Rating"));
         rating_button.set_expand(false);
-        rating_button.clicked.connect(on_filter_button_clicked);
         toolbar.insert(rating_button, -1);
         
         // separator
@@ -1332,31 +1319,6 @@ public class SearchFilterToolbar : Gtk.Revealer {
         search_filter.refresh();
     }
     
-    private void position_filter_popup(Gtk.Menu menu, out int x, out int y, out bool push_in) {
-        menu.realize();
-        int rx, ry;
-        rating_button.get_window().get_root_origin(out rx, out ry);
-        
-        Gtk.Allocation rating_button_allocation;
-        rating_button.get_allocation(out rating_button_allocation);
-        
-        Gtk.Allocation menubar_allocation;
-        AppWindow.get_instance().get_current_page().get_menubar().get_allocation(out menubar_allocation);
-        
-        int sidebar_w = Config.Facade.get_instance().get_sidebar_position();
-        
-        x = rx + rating_button_allocation.x + sidebar_w;
-        y = ry + rating_button_allocation.y + rating_button_allocation.height +
-                menubar_allocation.height;
-
-        push_in = false;
-    }
-    
-    private void on_filter_button_clicked() {
-        rating_button.filter_popup.popup(null, null, position_filter_popup, 0,
-            Gtk.get_current_event_time());
-    }
-
     private void on_savedsearch_selected(SavedSearch saved_search) {
         this.saved_search = saved_search;
         update();
@@ -1366,7 +1328,7 @@ public class SearchFilterToolbar : Gtk.Revealer {
         this.saved_search = null;
         update();
     }
-    
+
     private void edit_dialog(SavedSearch search) {
         saved_search_button.filter_popup.hide();
         SavedSearchDialog ssd = new SavedSearchDialog.edit_existing(search);
