@@ -2,7 +2,7 @@
 <interface domain="shotwell">
   <menu id="MenuBar">
     <submenu>
-      <attribute name="label" translatable="yes">FileMenu</attribute>
+      <attribute name="label" translatable="yes">_File</attribute>
       <section>
         <item>
           <attribute name="label" translatable="yes">Stop</attribute>
@@ -11,38 +11,41 @@
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonFileImport</attribute>
+          <attribute name="label" translatable="yes">_Import from Folder…</attribute>
+          <attribute name="accel">&lt;Primary&gt;i</attribute>
           <attribute name="action">CommonFileImport</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">ExternalLibraryImport</attribute>
+          <attribute name="label" translatable="yes">Import From _Application…</attribute>
           <attribute name="action">ExternalLibraryImport</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonEmptyTrash</attribute>
+          <attribute name="label" translatable="yes">Empty T_rash</attribute>
           <attribute name="action">CommonEmptyTrash</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonQuit</attribute>
+          <attribute name="label" translatable="yes">_Quit</attribute>
+          <attribute name="accel">&lt;Primary&gt;q</attribute>
           <attribute name="action">CommonQuit</attribute>
         </item>
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">ViewMenu</attribute>
+      <attribute name="label" translatable="yes">_View</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplayBasicProperties</attribute>
+          <attribute name="label" translatable="yes">_Basic Information</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;i</attribute>
           <attribute name="action">CommonDisplayBasicProperties</attribute>
         </item>
       </section>
       <section>
         <submenu>
-          <attribute name="label" translatable="yes">CommonSortEvents</attribute>
+          <attribute name="label" translatable="yes">Sort _Events</attribute>
           <section>
             <item>
               <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
@@ -57,24 +60,25 @@
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">HelpMenu</attribute>
+      <attribute name="label" translatable="yes">_Help</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonHelpContents</attribute>
+          <attribute name="label" translatable="yes">_Help</attribute>
+          <attribute name="accel">F1</attribute>
           <attribute name="action">CommonHelpContents</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonHelpFAQ</attribute>
+          <attribute name="label" translatable="yes">_Frequently Asked Questions</attribute>
           <attribute name="action">CommonHelpFAQ</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonHelpReportProblem</attribute>
+          <attribute name="label" translatable="yes">_Report a Problem…</attribute>
           <attribute name="action">CommonHelpReportProblem</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonAbout</attribute>
+          <attribute name="label" translatable="yes">_About</attribute>
           <attribute name="action">CommonAbout</attribute>
         </item>
       </section>

@@ -5,15 +5,15 @@
       <attribute name="label" translatable="yes">SearchContextMenu</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">RenameSearch</attribute>
+          <attribute name="label" translatable="yes">Re_name…</attribute>
           <attribute name="action">RenameSearch</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">EditSearch</attribute>
+          <attribute name="label" translatable="yes">_Edit…</attribute>
           <attribute name="action">EditSearch</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">DeleteSearch</attribute>
+          <attribute name="label" translatable="yes">_Delete</attribute>
           <attribute name="action">DeleteSearch</attribute>
         </item>
       </section>

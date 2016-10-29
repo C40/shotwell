@@ -2,78 +2,87 @@
 <interface domain="shotwell">
   <menu id="MenuBar">
     <submenu>
-      <attribute name="label" translatable="yes">FileMenu</attribute>
+      <attribute name="label" translatable="yes">_File</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonFileImport</attribute>
+          <attribute name="label" translatable="yes">_Import from Folder…</attribute>
+          <attribute name="accel">&lt;Primary&gt;i</attribute>
           <attribute name="action">CommonFileImport</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">ExternalLibraryImport</attribute>
+          <attribute name="label" translatable="yes">Import From _Application…</attribute>
           <attribute name="action">ExternalLibraryImport</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonEmptyTrash</attribute>
+          <attribute name="label" translatable="yes">Empty T_rash</attribute>
           <attribute name="action">CommonEmptyTrash</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonQuit</attribute>
+          <attribute name="label" translatable="yes">_Quit</attribute>
+          <attribute name="accel">&lt;Primary&gt;q</attribute>
           <attribute name="action">CommonQuit</attribute>
         </item>
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">EditMenu</attribute>
+      <attribute name="label" translatable="yes">_Edit</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonUndo</attribute>
+          <attribute name="label" translatable="yes">_Undo</attribute>
+          <attribute name="accel">&lt;Primary&gt;z</attribute>
           <attribute name="action">CommonUndo</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonRedo</attribute>
+          <attribute name="label" translatable="yes">_Redo</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;z</attribute>
           <attribute name="action">CommonRedo</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonFind</attribute>
+          <attribute name="label" translatable="yes">_Find</attribute>
           <attribute name="action">CommonFind</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonNewSearch</attribute>
+          <attribute name="label" translatable="yes">Ne_w Saved Search…</attribute>
+          <attribute name="accel">&lt;Primary&gt;s</attribute>
           <attribute name="action">CommonNewSearch</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonSelectAll</attribute>
+          <attribute name="label" translatable="yes">Select _All</attribute>
+          <attribute name="accel">&lt;Primary&gt;a</attribute>
           <attribute name="action">CommonSelectAll</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonPreferences</attribute>
+          <attribute name="label" translatable="yes">_Preferences</attribute>
           <attribute name="action">CommonPreferences</attribute>
         </item>
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">ViewMenu</attribute>
+      <attribute name="label" translatable="yes">_View</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplayBasicProperties</attribute>
+          <attribute name="label" translatable="yes">_Basic Information</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;i</attribute>
           <attribute name="action">CommonDisplayBasicProperties</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplayExtendedProperties</attribute>
+          <attribute name="label" translatable="yes">E_xtended Information</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;x</attribute>
           <attribute name="action">CommonDisplayExtendedProperties</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplaySearchbar</attribute>
+          <attribute name="label" translatable="yes">_Search Bar</attribute>
+          <attribute name="accel">F8</attribute>
           <attribute name="action">CommonDisplaySearchbar</attribute>
         </item>
         <item>
@@ -87,13 +96,14 @@
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">ViewComment</attribute>
+          <attribute name="label" translatable="yes">_Comments</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;c</attribute>
           <attribute name="action">ViewComment</attribute>
         </item>
       </section>
       <section>
         <submenu>
-          <attribute name="label" translatable="yes">CommonSortEvents</attribute>
+          <attribute name="label" translatable="yes">Sort _Events</attribute>
           <section>
             <item>
               <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
@@ -108,47 +118,50 @@
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonFullscreen</attribute>
+          <attribute name="label" translatable="yes">Fulls_creen</attribute>
+          <attribute name="accel">F11</attribute>
           <attribute name="action">CommonFullscreen</attribute>
         </item>
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">EventsMenu</attribute>
+      <attribute name="label" translatable="yes">Even_ts</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">Merge</attribute>
+          <attribute name="label" translatable="yes">_Merge Events</attribute>
           <attribute name="action">Merge</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">Rename</attribute>
+          <attribute name="label" translatable="yes">Re_name Event…</attribute>
+          <attribute name="accel">F2</attribute>
           <attribute name="action">Rename</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">EditComment</attribute>
+          <attribute name="label" translatable="yes">Edit _Comment…</attribute>
           <attribute name="action">EditComment</attribute>
         </item>
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">HelpMenu</attribute>
+      <attribute name="label" translatable="yes">_Help</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonHelpContents</attribute>
+          <attribute name="label" translatable="yes">_Help</attribute>
+          <attribute name="accel">F1</attribute>
           <attribute name="action">CommonHelpContents</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonHelpFAQ</attribute>
+          <attribute name="label" translatable="yes">_Frequently Asked Questions</attribute>
           <attribute name="action">CommonHelpFAQ</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonHelpReportProblem</attribute>
+          <attribute name="label" translatable="yes">_Report a Problem…</attribute>
           <attribute name="action">CommonHelpReportProblem</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">CommonAbout</attribute>
+          <attribute name="label" translatable="yes">_About</attribute>
           <attribute name="action">CommonAbout</attribute>
         </item>
       </section>

@@ -5,18 +5,19 @@
       <attribute name="label" translatable="yes">DirectContextMenu</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">Enhance</attribute>
+          <attribute name="label" translatable="yes">_Enhance</attribute>
+          <attribute name="accel">&lt;Primary&gt;e</attribute>
           <attribute name="action">Enhance</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">Revert</attribute>
+          <attribute name="label" translatable="yes">Re_vert to Original</attribute>
           <attribute name="action">Revert</attribute>
         </item>
       </section>
       <section>
       <attribute name="id">ContextJumpPlaceholder</attribute>
         <item>
-          <attribute name="label" translatable="yes">SendTo</attribute>
+          <attribute name="label" translatable="yes">Send _To…</attribute>
           <attribute name="action">SendTo</attribute>
         </item>
       </section>

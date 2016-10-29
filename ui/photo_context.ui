@@ -5,11 +5,12 @@
       <attribute name="label" translatable="yes">PhotoContextMenu</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">Enhance</attribute>
+          <attribute name="label" translatable="yes">_Enhance</attribute>
+          <attribute name="accel">&lt;Primary&gt;e</attribute>
           <attribute name="action">Enhance</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">Revert</attribute>
+          <attribute name="label" translatable="yes">Re_vert to Original</attribute>
           <attribute name="action">Revert</attribute>
         </item>
       </section>
@@ -92,15 +93,16 @@
           <attribute name="action">EditTitle</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">EditComment</attribute>
+          <attribute name="label" translatable="yes">Edit _Comment…</attribute>
           <attribute name="action">EditComment</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">ExternalEdit</attribute>
+          <attribute name="label" translatable="yes">Open with E_xternal Editor</attribute>
+          <attribute name="accel">&lt;Primary&gt;Return</attribute>
           <attribute name="action">ExternalEdit</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">ExternalEditRAW</attribute>
+          <attribute name="label" translatable="yes">Open With RA_W Editor</attribute>
           <attribute name="action">ExternalEditRAW</attribute>
         </item>
       </section>
