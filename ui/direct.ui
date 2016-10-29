@@ -1,70 +1,177 @@
-<ui>
-
-    <menubar name="MenuBar">
-        <menu name="FileMenu" action="FileMenu">
-            <menuitem name="Save" action="Save" />
-            <menuitem name="SaveAs" action="SaveAs" />
-            <separator />
-            <placeholder name="PrintPlaceholder"/>
-            <separator />
-            <menuitem name="SendTo" action="SendTo" />
-            <placeholder name="SetBackgroundPlaceholder" />
-            <separator />
-            <menuitem name="JumpToFile" action="CommonJumpToFile" />
-            <separator />
-            <menuitem name="Quit" action="CommonQuit" />
-        </menu>
-        
-        <menu name="EditMenu" action="EditMenu">
-            <menuitem name="Undo" action="CommonUndo" />
-            <menuitem name="Redo" action="CommonRedo" />
-        </menu>
-        
-        <menu name="ViewMenu" action="ViewMenu">
-            <menuitem name="Fullscreen" action="CommonFullscreen" />
-            <separator />
-            <menuitem name="IncreaseSize" action="IncreaseSize" />
-            <menuitem name="DecreaseSize" action="DecreaseSize" />
-            <separator />
-            <menuitem name="ZoomFit" action="ZoomFit" />
-            <menuitem name="Zoom100" action="Zoom100" />
-            <menuitem name="Zoom200" action="Zoom200" />
-        </menu>
-
-        <menu name="PhotoMenu" action="PhotoMenu">
-            <menuitem name="PrevPhoto" action="PrevPhoto" />
-            <menuitem name="NextPhoto" action="NextPhoto" />
-            <separator />
-            <menuitem name="RotateClockwise" action="RotateClockwise" />
-            <menuitem name="RotateCounterclockwise" action="RotateCounterclockwise" />
-            <menuitem name="FlipHorizontally" action="FlipHorizontally" />
-            <menuitem name="FlipVertically" action="FlipVertically" />
-            <separator />
-            <menu name="Tools" action="Tools">
-                <menuitem name="Enhance" action="Enhance" />
-                <menuitem name="Crop" action="Crop" />
-                <menuitem name="Straighten" action="Straighten" />
-                <menuitem name="RedEye" action="RedEye" />
-                <menuitem name="Adjust" action="Adjust" />
-            </menu>
-            <menuitem name="Revert" action="Revert" />
-            <separator />
-            <menuitem name="AdjustDateTime" action="AdjustDateTime" />
-        </menu>
-        
-        <menu name="HelpMenu" action="HelpMenu">
-            <menuitem name="Contents" action="CommonHelpContents" />
-            <menuitem name="Frequently Asked Questions" action="CommonHelpFAQ" />
-            <menuitem name="Report a Problem…" action="CommonHelpReportProblem" />
-            <separator />
-            <menuitem name="About" action="CommonAbout" />
-        </menu>
-    </menubar>
-
-    <popup name="DirectContextMenu">
-        <placeholder name="ContextJumpPlaceholder">
-            <menuitem name="ContextJumpToFile" action="CommonJumpToFile" />
-        </placeholder>
-    </popup>
-    
-</ui>
+<?xml version="1.0"?>
+<interface domain="shotwell">
+  <menu id="MenuBar">
+    <submenu>
+      <attribute name="label" translatable="yes">FileMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Save</attribute>
+          <attribute name="action">Save</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">SaveAs</attribute>
+          <attribute name="action">SaveAs</attribute>
+        </item>
+      </section>
+      <section>
+      <attribute name="id">PrintPlaceholder</attribute>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">SendTo</attribute>
+          <attribute name="action">SendTo</attribute>
+        </item>
+      <attribute name="id">SetBackgroundPlaceholder</attribute>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonJumpToFile</attribute>
+          <attribute name="action">CommonJumpToFile</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonQuit</attribute>
+          <attribute name="action">CommonQuit</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">EditMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonUndo</attribute>
+          <attribute name="action">CommonUndo</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonRedo</attribute>
+          <attribute name="action">CommonRedo</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">ViewMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonFullscreen</attribute>
+          <attribute name="action">CommonFullscreen</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">IncreaseSize</attribute>
+          <attribute name="action">IncreaseSize</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">DecreaseSize</attribute>
+          <attribute name="action">DecreaseSize</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">ZoomFit</attribute>
+          <attribute name="action">ZoomFit</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Zoom100</attribute>
+          <attribute name="action">Zoom100</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Zoom200</attribute>
+          <attribute name="action">Zoom200</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">PhotoMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">PrevPhoto</attribute>
+          <attribute name="action">PrevPhoto</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">NextPhoto</attribute>
+          <attribute name="action">NextPhoto</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">RotateClockwise</attribute>
+          <attribute name="action">RotateClockwise</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">RotateCounterclockwise</attribute>
+          <attribute name="action">RotateCounterclockwise</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">FlipHorizontally</attribute>
+          <attribute name="action">FlipHorizontally</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">FlipVertically</attribute>
+          <attribute name="action">FlipVertically</attribute>
+        </item>
+      </section>
+      <section>
+        <submenu>
+          <attribute name="label" translatable="yes">Tools</attribute>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">Enhance</attribute>
+              <attribute name="action">Enhance</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">Crop</attribute>
+              <attribute name="action">Crop</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">Straighten</attribute>
+              <attribute name="action">Straighten</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RedEye</attribute>
+              <attribute name="action">RedEye</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">Adjust</attribute>
+              <attribute name="action">Adjust</attribute>
+            </item>
+          </section>
+        </submenu>
+        <item>
+          <attribute name="label" translatable="yes">Revert</attribute>
+          <attribute name="action">Revert</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">AdjustDateTime</attribute>
+          <attribute name="action">AdjustDateTime</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">HelpMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonHelpContents</attribute>
+          <attribute name="action">CommonHelpContents</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonHelpFAQ</attribute>
+          <attribute name="action">CommonHelpFAQ</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonHelpReportProblem</attribute>
+          <attribute name="action">CommonHelpReportProblem</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonAbout</attribute>
+          <attribute name="action">CommonAbout</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+</interface>

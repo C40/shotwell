@@ -34,8 +34,8 @@ public abstract class CollectionPage : MediaPage {
         
         get_view().items_altered.connect(on_photos_altered);
         
-        init_item_context_menu("/CollectionContextMenu");
-        init_toolbar("/CollectionToolbar");
+        init_item_context_menu("CollectionContextMenu");
+        init_toolbar("CollectionToolbar");
         
         show_all();
 
@@ -745,20 +745,20 @@ public abstract class CollectionPage : MediaPage {
     }
     
     protected override bool on_ctrl_pressed(Gdk.EventKey? event) {
-        Gtk.ToolButton? rotate_button = ui.get_widget("/CollectionToolbar/ToolRotate")
+/*        Gtk.ToolButton? rotate_button = ui.get_widget("/CollectionToolbar/ToolRotate")
             as Gtk.ToolButton;
         if (rotate_button != null)
             rotate_button.set_related_action(get_action("RotateCounterclockwise"));
-        
+         */
         return base.on_ctrl_pressed(event);
     }
     
     protected override bool on_ctrl_released(Gdk.EventKey? event) {
-        Gtk.ToolButton? rotate_button = ui.get_widget("/CollectionToolbar/ToolRotate")
+/*        Gtk.ToolButton? rotate_button = ui.get_widget("/CollectionToolbar/ToolRotate")
             as Gtk.ToolButton;
         if (rotate_button != null)
             rotate_button.set_related_action(get_action("RotateClockwise"));
-        
+        */
         return base.on_ctrl_released(event);
     }
     

@@ -1,39 +1,122 @@
-<ui>
-    <popup name="PhotoContextMenu">
-        <menuitem name="ContextEnhance" action="Enhance" />
-        <menuitem name="ContextRevert" action="Revert" />
-        <separator />
-        <menuitem name="ContextAddTags" action="AddTagsContextMenu" />
-        <menuitem name="ContextModifyTags" action="ModifyTags" />
-        <placeholder name="ContextTagsPlaceholder" />
-        <separator />
-        <menuitem name="ContextFlag" action="Flag" />
-        <menu name="Rate" action="Rate">
-            <menuitem name="RateFive" action="RateFive" />
-            <menuitem name="RateFour" action="RateFour" />
-            <menuitem name="RateThree" action="RateThree" />
-            <menuitem name="RateTwo" action="RateTwo" />
-            <menuitem name="RateOne" action="RateOne" />
-            <menuitem name="RateUnrated" action="RateUnrated" />
-            <menuitem name="RateRejected" action="RateRejected" />
-            <separator />
-            <menuitem name="IncreaseRating" action="IncreaseRating" />
-            <menuitem name="DecreaseRating" action="DecreaseRating" />
-        </menu>
-        <menu name="RawDeveloper" action="RawDeveloper">
-            <menuitem name="RawDeveloperShotwell" action="RawDeveloperShotwell" />
-            <menuitem name="RawDeveloperCamera" action="RawDeveloperCamera" />
-        </menu>
-        <separator />
-        <menuitem name="ContextEditTitle" action="EditTitle" />
-        <menuitem name="ContextEditComment" action="EditComment" />
-        <menuitem name="ContextExternalEdit" action="ExternalEdit" />
-        <menuitem name="ContextExternalEditRAW" action="ExternalEditRAW" />
-        <separator />
-        <placeholder name="ContextJumpPlaceholder" />
-        <menuitem name="ContextSendTo" action="SendToContextMenu" />
-        <separator />
-        <menuitem name="ContextMoveToTrash" action="MoveToTrash" />
-    </popup>
-
-</ui>
+<?xml version="1.0"?>
+<interface domain="shotwell">
+  <menu id="PhotoContextMenu">
+    <submenu>
+      <attribute name="label" translatable="yes">PhotoContextMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Enhance</attribute>
+          <attribute name="action">Enhance</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Revert</attribute>
+          <attribute name="action">Revert</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">AddTagsContextMenu</attribute>
+          <attribute name="action">AddTagsContextMenu</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">ModifyTags</attribute>
+          <attribute name="action">ModifyTags</attribute>
+        </item>
+      <attribute name="id">ContextTagsPlaceholder</attribute>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Flag</attribute>
+          <attribute name="action">Flag</attribute>
+        </item>
+        <submenu>
+          <attribute name="label" translatable="yes">Rate</attribute>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">RateFive</attribute>
+              <attribute name="action">RateFive</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RateFour</attribute>
+              <attribute name="action">RateFour</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RateThree</attribute>
+              <attribute name="action">RateThree</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RateTwo</attribute>
+              <attribute name="action">RateTwo</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RateOne</attribute>
+              <attribute name="action">RateOne</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RateUnrated</attribute>
+              <attribute name="action">RateUnrated</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RateRejected</attribute>
+              <attribute name="action">RateRejected</attribute>
+            </item>
+          </section>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">IncreaseRating</attribute>
+              <attribute name="action">IncreaseRating</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">DecreaseRating</attribute>
+              <attribute name="action">DecreaseRating</attribute>
+            </item>
+          </section>
+        </submenu>
+        <submenu>
+          <attribute name="label" translatable="yes">RawDeveloper</attribute>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">RawDeveloperShotwell</attribute>
+              <attribute name="action">RawDeveloperShotwell</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">RawDeveloperCamera</attribute>
+              <attribute name="action">RawDeveloperCamera</attribute>
+            </item>
+          </section>
+        </submenu>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">EditTitle</attribute>
+          <attribute name="action">EditTitle</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">EditComment</attribute>
+          <attribute name="action">EditComment</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">ExternalEdit</attribute>
+          <attribute name="action">ExternalEdit</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">ExternalEditRAW</attribute>
+          <attribute name="action">ExternalEditRAW</attribute>
+        </item>
+      </section>
+      <section>
+      <attribute name="id">ContextJumpPlaceholder</attribute>
+        <item>
+          <attribute name="label" translatable="yes">SendToContextMenu</attribute>
+          <attribute name="action">SendToContextMenu</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">MoveToTrash</attribute>
+          <attribute name="action">MoveToTrash</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+</interface>

@@ -274,8 +274,8 @@ public class DirectPhotoPage : EditingHostPage {
     }
 
     protected override bool on_context_buttonpress(Gdk.EventButton event) {
-        Gtk.Menu context_menu = (Gtk.Menu) ui.get_widget("/DirectContextMenu");
-        popup_context_menu(context_menu, event);
+//        Gtk.Menu context_menu = (Gtk.Menu) ui.get_widget("/DirectContextMenu");
+//        popup_context_menu(context_menu, event);
 
         return true;
     }

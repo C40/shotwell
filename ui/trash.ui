@@ -1,83 +1,181 @@
-<ui>
-
-    <menubar name="MenuBar">
-        <menu name="FileMenu" action="FileMenu">
-            <menuitem name="Import" action="CommonFileImport" />
-            <menuitem name="ImportExternal" action="ExternalLibraryImport" />
-            <separator />
-            <menuitem name="JumpToFile" action="CommonJumpToFile" />
-            <menuitem name="EmptyTrash" action="CommonEmptyTrash" />
-            <separator />
-            <menuitem name="Quit" action="CommonQuit" />
-        </menu>
-        
-        <menu name="EditMenu" action="EditMenu">
-            <menuitem name="Undo" action="CommonUndo" />
-            <menuitem name="Redo" action="CommonRedo" />
-            <separator />
-            <menuitem name="Find" action="CommonFind" />
-            <menuitem name="NewSearch" action="CommonNewSearch" />
-            <separator />
-            <menuitem name="Delete" action="Delete" />
-            <menuitem name="Restore" action="Restore" />
-            <separator />
-            <menuitem name="SelectAll" action="CommonSelectAll" />
-            <separator />
-            <menuitem name="Preferences" action="CommonPreferences" />
-        </menu>
-        
-        <menu name="ViewMenu" action="ViewMenu">
-            <menuitem name="DisplayBasicProperties" action="CommonDisplayBasicProperties" />
-            <menuitem name="DisplayExtendedProperties" action="CommonDisplayExtendedProperties" />
-            <menuitem name="DisplaySearchbar" action="CommonDisplaySearchbar" />
-            <menuitem name="DisplaySidebar" action="CommonDisplaySidebar" />
-            <menuitem name="DisplayToolbar" action="CommonDisplayToolbar" />
-            <separator />
-            <menu name="FilterPhotos" action="CommonFilterPhotos">
-                <menuitem name="DisplayFiveOrHigher" action="CommonDisplayFiveOrHigher" />
-                <menuitem name="DisplayFourOrHigher" action="CommonDisplayFourOrHigher" />
-                <menuitem name="DisplayThreeOrHigher" action="CommonDisplayThreeOrHigher" />
-                <menuitem name="DisplayTwoOrHigher" action="CommonDisplayTwoOrHigher" />
-                <menuitem name="DisplayOneOrHigher" action="CommonDisplayOneOrHigher" />
-                <menuitem name="DisplayUnratedOrHigher" action="CommonDisplayUnratedOrHigher" />
-                <menuitem name="DisplayRejectedOrHigher" action="CommonDisplayRejectedOrHigher" />
-                <menuitem name="DisplayRejectedOnly" action="CommonDisplayRejectedOnly" />
-            </menu>
-            <separator />
-            <menu name="SortEvents" action="CommonSortEvents">
-                <menuitem name="SortEventsAscending" action="CommonSortEventsAscending" />
-                <menuitem name="SortEventsDescending" action="CommonSortEventsDescending" />
-            </menu>
-        </menu>
-        
-        <menu name="HelpMenu" action="HelpMenu">
-            <menuitem name="Contents" action="CommonHelpContents" />
-            <menuitem name="Frequently Asked Questions" action="CommonHelpFAQ" />
-            <menuitem name="Report a Problem…" action="CommonHelpReportProblem" />
-            <separator />
-            <menuitem name="About" action="CommonAbout" />
-        </menu>
-    </menubar>
-    
-    <popup name="TrashContextMenu">
-        <menuitem name="ContextDelete" action="Delete" />
-        <menuitem name="ContextRestore" action="Restore" />
-        <separator />
-        <menuitem name="ContextJumpToFile" action="CommonJumpToFile" />
-        <separator />
-        <menuitem name="ContextEmptyTrash" action="CommonEmptyTrash" />
-    </popup>
-    
-    <popup name="TrashPageMenu">
-        <menuitem name="ContextEmptyTrash" action="CommonEmptyTrash" />
-    </popup>
-    
-    <toolbar name="TrashToolbar">
-        <toolitem name="ToolDelete" action="Delete" />
-        <toolitem name="ToolRestore" action="Restore" />
-        <toolitem name="ToolEmptyTrash" action="CommonEmptyTrash" />
-        <separator />
-        <toolitem name="ToolFind" action="CommonDisplaySearchbar" />
-    </toolbar>
-    
-</ui>
+<?xml version="1.0"?>
+<interface domain="shotwell">
+  <menu id="MenuBar">
+    <submenu>
+      <attribute name="label" translatable="yes">FileMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonFileImport</attribute>
+          <attribute name="action">CommonFileImport</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">ExternalLibraryImport</attribute>
+          <attribute name="action">ExternalLibraryImport</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonJumpToFile</attribute>
+          <attribute name="action">CommonJumpToFile</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonEmptyTrash</attribute>
+          <attribute name="action">CommonEmptyTrash</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonQuit</attribute>
+          <attribute name="action">CommonQuit</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">EditMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonUndo</attribute>
+          <attribute name="action">CommonUndo</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonRedo</attribute>
+          <attribute name="action">CommonRedo</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonFind</attribute>
+          <attribute name="action">CommonFind</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonNewSearch</attribute>
+          <attribute name="action">CommonNewSearch</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Delete</attribute>
+          <attribute name="action">Delete</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Restore</attribute>
+          <attribute name="action">Restore</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonSelectAll</attribute>
+          <attribute name="action">CommonSelectAll</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonPreferences</attribute>
+          <attribute name="action">CommonPreferences</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">ViewMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonDisplayBasicProperties</attribute>
+          <attribute name="action">CommonDisplayBasicProperties</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonDisplayExtendedProperties</attribute>
+          <attribute name="action">CommonDisplayExtendedProperties</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonDisplaySearchbar</attribute>
+          <attribute name="action">CommonDisplaySearchbar</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonDisplaySidebar</attribute>
+          <attribute name="action">CommonDisplaySidebar</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonDisplayToolbar</attribute>
+          <attribute name="action">CommonDisplayToolbar</attribute>
+        </item>
+      </section>
+      <section>
+        <submenu>
+          <attribute name="label" translatable="yes">CommonFilterPhotos</attribute>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayFiveOrHigher</attribute>
+              <attribute name="action">CommonDisplayFiveOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayFourOrHigher</attribute>
+              <attribute name="action">CommonDisplayFourOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayThreeOrHigher</attribute>
+              <attribute name="action">CommonDisplayThreeOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayTwoOrHigher</attribute>
+              <attribute name="action">CommonDisplayTwoOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayOneOrHigher</attribute>
+              <attribute name="action">CommonDisplayOneOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayUnratedOrHigher</attribute>
+              <attribute name="action">CommonDisplayUnratedOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayRejectedOrHigher</attribute>
+              <attribute name="action">CommonDisplayRejectedOrHigher</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonDisplayRejectedOnly</attribute>
+              <attribute name="action">CommonDisplayRejectedOnly</attribute>
+            </item>
+          </section>
+        </submenu>
+      </section>
+      <section>
+        <submenu>
+          <attribute name="label" translatable="yes">CommonSortEvents</attribute>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
+              <attribute name="action">CommonSortEventsAscending</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">CommonSortEventsDescending</attribute>
+              <attribute name="action">CommonSortEventsDescending</attribute>
+            </item>
+          </section>
+        </submenu>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">HelpMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonHelpContents</attribute>
+          <attribute name="action">CommonHelpContents</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonHelpFAQ</attribute>
+          <attribute name="action">CommonHelpFAQ</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">CommonHelpReportProblem</attribute>
+          <attribute name="action">CommonHelpReportProblem</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">CommonAbout</attribute>
+          <attribute name="action">CommonAbout</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+</interface>

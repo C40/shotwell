@@ -28,9 +28,9 @@ public class TrashPage : CheckerboardPage {
     public TrashPage() {
         base (NAME);
         
-        init_item_context_menu("/TrashContextMenu");
-        init_page_context_menu("/TrashPageMenu");
-        init_toolbar("/TrashToolbar");
+        init_item_context_menu("TrashContextMenu");
+        init_page_context_menu("TrashPageMenu");
+        init_toolbar("TrashToolbar");
         
         tracker = new MediaViewTracker(get_view());
         

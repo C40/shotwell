@@ -28,8 +28,8 @@ public class OfflinePage : CheckerboardPage {
     public OfflinePage() {
         base (NAME);
         
-        init_item_context_menu("/OfflineContextMenu");
-        init_toolbar("/OfflineToolbar");
+        init_item_context_menu("OfflineContextMenu");
+        init_toolbar("OfflineToolbar");
         
         tracker = new MediaViewTracker(get_view());
         

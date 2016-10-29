@@ -49,7 +49,7 @@ public class InjectionGroup {
 public abstract class Page : Gtk.ScrolledWindow {
     private const int CONSIDER_CONFIGURE_HALTED_MSEC = 400;
     
-    protected Gtk.UIManager ui;
+    protected Gtk.Builder builder;
     protected Gtk.Toolbar toolbar;
     protected bool in_view = false;
     
@@ -155,7 +155,7 @@ public abstract class Page : Gtk.ScrolledWindow {
         assert(this.container == null);
         
         this.container = container;
-        ui = ((PageWindow) container).get_ui_manager();
+        this.builder = new Gtk.Builder ();
     }
     
     public virtual void clear_container() {
@@ -199,22 +199,23 @@ public abstract class Page : Gtk.ScrolledWindow {
     public Gtk.Widget? get_event_source() {
         return event_source;
     }
+
+    private Gtk.MenuBar menubar;
     
     public virtual Gtk.MenuBar get_menubar() {
-        Gtk.MenuBar? menubar = ui.get_widget("/MenuBar") as Gtk.MenuBar;
-        assert(menubar != null);
-        
-        return menubar;
-    }
+        if (this.menubar == null) {
+           var model = builder.get_object ("MenuBar") as GLib.MenuModel;
+           this.menubar = new Gtk.MenuBar.from_model (model);
+        }
 
-    public virtual unowned Gtk.Widget get_page_ui_widget(string path) {
-        return ui.get_widget(path);
+        return this.menubar;
     }
 
     public virtual Gtk.Toolbar get_toolbar() {
         if (toolbar == null) {
             toolbar = toolbar_path == null ? new Gtk.Toolbar() :
-                                             ui.get_widget(toolbar_path) as Gtk.Toolbar;
+                                             builder.get_object (toolbar_path)
+                                             as Gtk.Toolbar;
             toolbar.get_style_context().add_class("bottom-toolbar");  // for elementary theme
             toolbar.set_icon_size(Gtk.IconSize.SMALL_TOOLBAR);
         }
@@ -473,31 +474,32 @@ public abstract class Page : Gtk.ScrolledWindow {
         foreach (string ui_filename in ui_filenames)
             init_load_ui(ui_filename);
             
-        ui.insert_action_group(action_group, 0);
+        //ui.insert_action_group(action_group, 0);
 
         // Collect injected UI elements and add them to the UI manager
         InjectionGroup[] injection_groups = init_collect_injection_groups();
         foreach (InjectionGroup group in injection_groups) {
             foreach (InjectionGroup.Element element in group.get_elements()) {
-                uint merge_id = ui.new_merge_id();
+                debug (element.name);
+/*                uint merge_id = ui.new_merge_id();
                 ui.add_ui(merge_id, group.get_path(), element.name, element.action,
-                    element.kind, false);
-                merge_ids += merge_id;
+                    element.kind, false); 
+                merge_ids += merge_id;*/
             }
         }
         
-        AppWindow.get_instance().replace_common_placeholders(ui);
+//        AppWindow.get_instance().replace_common_placeholders(ui);
         
-        ui.ensure_update();
+//        ui.ensure_update();
     }
     
     private void remove_ui() {
-        for (int i = merge_ids.length - 1 ; i >= 0 ; --i)
+/*        for (int i = merge_ids.length - 1 ; i >= 0 ; --i)
             ui.remove_ui(merge_ids[i]);
-        ui.remove_action_group(action_group);
+        ui.remove_action_group(action_group); */
         merge_ids.resize(0);
         
-        ui.ensure_update();
+//        ui.ensure_update();
     }
     
     public void init_toolbar(string path) {
@@ -558,7 +560,11 @@ public abstract class Page : Gtk.ScrolledWindow {
         File ui_file = Resources.get_ui(ui_filename);
         
         try {
-            merge_ids += ui.add_ui_from_file(ui_file.get_path());
+            critical ("=> adding ui file %s", ui_filename);
+            merge_ids += builder.add_from_file(ui_file.get_path());
+            foreach (var obj in builder.get_objects ()) {
+                critical ("Found object %s", obj.get_type ().name ());
+            }
         } catch (Error err) {
             AppWindow.error_message("Error loading UI file %s: %s".printf(
                 ui_file.get_path(), err.message));
@@ -1244,18 +1250,26 @@ public abstract class CheckerboardPage : Page {
             get_page_context_menu();
     }
     
+    private Gtk.Menu item_context_menu;
     public virtual Gtk.Menu? get_item_context_menu() {
-        Gtk.Menu menu = (Gtk.Menu) ui.get_widget(item_context_menu_path);
-        assert(menu != null);
-        return menu;
+        if (item_context_menu != null) {
+            var model = this.builder.get_object (item_context_menu_path)
+                as GLib.MenuModel;
+            item_context_menu = new Gtk.Menu.from_model (model);
+        }
+
+        return item_context_menu;
     }
     
+    private Gtk.Menu page_context_menu;
     public override Gtk.Menu? get_page_context_menu() {
-        if (page_context_menu_path == null)
-            return null;
-        Gtk.Menu menu = (Gtk.Menu) ui.get_widget(page_context_menu_path);
-        assert(menu != null);
-        return menu;
+        if (page_context_menu != null) {
+            var model = this.builder.get_object (page_context_menu_path)
+                as GLib.MenuModel;
+            page_context_menu = new Gtk.Menu.from_model (model);
+        }
+
+        return page_context_menu;
     }
     
     protected override bool on_context_keypress() {

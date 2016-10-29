@@ -1,10 +1,25 @@
-<ui>
-    <popup name="DirectContextMenu">
-        <menuitem name="ContextEnhance" action="Enhance" />
-        <menuitem name="ContextRevert" action="Revert" />
-        <separator />
-        <placeholder name="ContextJumpPlaceholder" />
-        <menuitem name="ContextSendTo" action="SendTo" />
-    </popup>
-</ui>
-
+<?xml version="1.0"?>
+<interface domain="shotwell">
+  <menu id="DirectContextMenu">
+    <submenu>
+      <attribute name="label" translatable="yes">DirectContextMenu</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Enhance</attribute>
+          <attribute name="action">Enhance</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Revert</attribute>
+          <attribute name="action">Revert</attribute>
+        </item>
+      </section>
+      <section>
+      <attribute name="id">ContextJumpPlaceholder</attribute>
+        <item>
+          <attribute name="label" translatable="yes">SendTo</attribute>
+          <attribute name="action">SendTo</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+</interface>

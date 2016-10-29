@@ -3051,9 +3051,10 @@ public class LibraryPhotoPage : EditingHostPage {
     }
     
     private Gtk.Menu get_context_menu() {
-        Gtk.Menu menu = (Gtk.Menu) ui.get_widget("/PhotoContextMenu");
+/*        Gtk.Menu menu = (Gtk.Menu) ui.get_widget("/PhotoContextMenu");
         assert(menu != null);
-        return menu;
+        return menu; */
+        return new Gtk.Menu ();
     }
     
     protected override bool on_context_buttonpress(Gdk.EventButton event) {

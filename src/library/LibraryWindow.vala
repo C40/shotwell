@@ -176,7 +176,7 @@ public class LibraryWindow : AppWindow {
         // setup search bar and add its accelerators to the window
         search_toolbar = new SearchFilterToolbar(search_actions);
         
-        try {
+/*        try {
             File ui_file = Resources.get_ui("top.ui");
             ui.add_ui_from_file(ui_file.get_path());
         } catch (Error e) {
@@ -189,6 +189,7 @@ public class LibraryWindow : AppWindow {
         // We never want to invoke show_all() on the menubar since that will show empty menus,
         // which should be hidden.
         menubar.no_show_all = true;
+        */
         
         // create the main layout & start at the Library page
         create_layout(library_branch.photos_entry.get_page());
@@ -1345,6 +1346,11 @@ public class LibraryWindow : AppWindow {
         
         Page current_page = get_current_page();
         if (current_page != null) {
+            var menubar = current_page.get_menubar ();
+            if (menubar != null) {
+                layout.remove (menubar);
+            }
+
             Gtk.Toolbar toolbar = current_page.get_toolbar();
             if (toolbar != null)
                 right_vbox.remove(toolbar);
@@ -1399,6 +1405,12 @@ public class LibraryWindow : AppWindow {
         subscribe_for_basic_information(get_current_page());
         
         page.switched_to();
+
+        var menubar = page.get_menubar ();
+        if (menubar != null) {
+            layout.pack_start (menubar, false, false);
+            menubar.show_all ();
+        }
         
         Gtk.Toolbar toolbar = page.get_toolbar();
         if (toolbar != null) {
