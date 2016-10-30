@@ -86,11 +86,13 @@
           <attribute name="action">CommonDisplaySearchbar</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplaySidebar</attribute>
+          <attribute name="label" translatable="yes">S_idebar</attribute>
+          <attribute name="accel">F9</attribute>
           <attribute name="action">CommonDisplaySidebar</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplayToolbar</attribute>
+          <attribute name="label" translatable="yes">T_oolbar</attribute>
+          <attribute name="accel">&lt;Primary&gt;F9</attribute>
           <attribute name="action">CommonDisplayToolbar</attribute>
         </item>
       </section>
@@ -106,11 +108,11 @@
           <attribute name="label" translatable="yes">Sort _Events</attribute>
           <section>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
+              <attribute name="label" translatable="yes">_Ascending</attribute>
               <attribute name="action">CommonSortEventsAscending</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsDescending</attribute>
+              <attribute name="label" translatable="yes">D_escending</attribute>
               <attribute name="action">CommonSortEventsDescending</attribute>
             </item>
           </section>

@@ -115,7 +115,8 @@
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">MoveToTrash</attribute>
+          <attribute name="label" translatable="yes">_Move to Trash</attribute>
+          <attribute name="accel">Delete</attribute>
           <attribute name="action">MoveToTrash</attribute>
         </item>
       </section>

@@ -14,7 +14,8 @@
           <attribute name="action">ExternalLibraryImport</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">Export</attribute>
+          <attribute name="label" translatable="yes">Save _As…</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;e</attribute>
           <attribute name="action">Export</attribute>
         </item>
       </section>
@@ -73,11 +74,13 @@
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">RemoveFromLibrary</attribute>
+          <attribute name="label" translatable="yes">R_emove from Library</attribute>
+          <attribute name="accel">&lt;Shift&gt;Delete</attribute>
           <attribute name="action">RemoveFromLibrary</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">MoveToTrash</attribute>
+          <attribute name="label" translatable="yes">_Move to Trash</attribute>
+          <attribute name="accel">Delete</attribute>
           <attribute name="action">MoveToTrash</attribute>
         </item>
       </section>
@@ -102,17 +105,20 @@
           <attribute name="action">CommonDisplayExtendedProperties</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplaySidebar</attribute>
+          <attribute name="label" translatable="yes">S_idebar</attribute>
+          <attribute name="accel">F9</attribute>
           <attribute name="action">CommonDisplaySidebar</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">CommonDisplayToolbar</attribute>
+          <attribute name="label" translatable="yes">T_oolbar</attribute>
+          <attribute name="accel">&lt;Primary&gt;F9</attribute>
           <attribute name="action">CommonDisplayToolbar</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">ViewRatings</attribute>
+          <attribute name="label" translatable="yes">_Ratings</attribute>
+          <attribute name="accel">&lt;Primary&gt;&lt;Shift&gt;n</attribute>
           <attribute name="action">ViewRatings</attribute>
         </item>
       </section>
@@ -121,11 +127,11 @@
           <attribute name="label" translatable="yes">Sort _Events</attribute>
           <section>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
+              <attribute name="label" translatable="yes">_Ascending</attribute>
               <attribute name="action">CommonSortEventsAscending</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsDescending</attribute>
+              <attribute name="label" translatable="yes">_Descending</attribute>
               <attribute name="action">CommonSortEventsDescending</attribute>
             </item>
           </section>

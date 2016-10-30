@@ -2,57 +2,57 @@
 <interface domain="shotwell">
   <menu id="CollectionContextMenu">
     <submenu>
-      <attribute name="label" translatable="yes">Rate</attribute>
+      <attribute name="label" translatable="yes">_Set Rating</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">RateFive</attribute>
+          <attribute name="label" translatable="no">★★★★★</attribute>
           <attribute name="action">RateFive</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RateFour</attribute>
+          <attribute name="label" translatable="no">★★★★</attribute>
           <attribute name="action">RateFour</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RateThree</attribute>
+          <attribute name="label" translatable="no">★★★</attribute>
           <attribute name="action">RateThree</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RateTwo</attribute>
+          <attribute name="label" translatable="no">★★</attribute>
           <attribute name="action">RateTwo</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RateOne</attribute>
+          <attribute name="label" translatable="no">★</attribute>
           <attribute name="action">RateOne</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RateUnrated</attribute>
+          <attribute name="label" translatable="yes">_Unrated</attribute>
           <attribute name="action">RateUnrated</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RateRejected</attribute>
+          <attribute name="label" translatable="yes">_Rejected</attribute>
           <attribute name="action">RateRejected</attribute>
         </item>
       </section>
       <section>
         <item>
-          <attribute name="label" translatable="yes">IncreaseRating</attribute>
+          <attribute name="label" translatable="yes">_Increase</attribute>
           <attribute name="action">IncreaseRating</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">DecreaseRating</attribute>
+          <attribute name="label" translatable="yes">_Decrease</attribute>
           <attribute name="action">DecreaseRating</attribute>
         </item>
       </section>
     </submenu>
     <submenu>
-      <attribute name="label" translatable="yes">RawDeveloper</attribute>
+      <attribute name="label" translatable="yes">_Developer</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">RawDeveloperShotwell</attribute>
+          <attribute name="label" translatable="yes">Shotwell</attribute>
           <attribute name="action">RawDeveloperShotwell</attribute>
         </item>
         <item>
-          <attribute name="label" translatable="yes">RawDeveloperCamera</attribute>
+          <attribute name="label" translatable="yes">Camera</attribute>
           <attribute name="action">RawDeveloperCamera</attribute>
         </item>
       </section>

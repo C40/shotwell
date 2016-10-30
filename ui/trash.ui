@@ -115,36 +115,52 @@
           <attribute name="label" translatable="yes">_Filter Photos</attribute>
           <section>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayFiveOrHigher</attribute>
-              <attribute name="action">CommonDisplayFiveOrHigher</attribute>
+              <attribute name="label" translatable="no">★★★★★</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">7</attribute>
+              <attribute name="accel">&lt;Primary&gt;5</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayFourOrHigher</attribute>
-              <attribute name="action">CommonDisplayFourOrHigher</attribute>
+              <attribute name="label" translatable="no">★★★★</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">6</attribute>
+              <attribute name="accel">&lt;Primary&gt;4</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayThreeOrHigher</attribute>
-              <attribute name="action">CommonDisplayThreeOrHigher</attribute>
+              <attribute name="label" translatable="no">★★★</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">5</attribute>
+              <attribute name="accel">&lt;Primary&gt;3</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayTwoOrHigher</attribute>
-              <attribute name="action">CommonDisplayTwoOrHigher</attribute>
+              <attribute name="label" translatable="no">★★</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">4</attribute>
+              <attribute name="accel">&lt;Primary&gt;2</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayOneOrHigher</attribute>
-              <attribute name="action">CommonDisplayOneOrHigher</attribute>
+              <attribute name="label" translatable="no">★</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">3</attribute>
+              <attribute name="accel">&lt;Primary&gt;1</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayUnratedOrHigher</attribute>
-              <attribute name="action">CommonDisplayUnratedOrHigher</attribute>
+              <attribute name="label" translatable="yes">_All Photos</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">2</attribute>
+              <attribute name="accel">&lt;Primary&gt;0</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayRejectedOrHigher</attribute>
-              <attribute name="action">CommonDisplayRejectedOrHigher</attribute>
+              <attribute name="label" translatable="yes">All + _Rejected</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">1</attribute>
+              <attribute name="accel">&lt;Primary&gt;9</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonDisplayRejectedOnly</attribute>
-              <attribute name="action">CommonDisplayRejectedOnly</attribute>
+              <attribute name="label" translatable="yes">Rejected _Only</attribute>
+              <attribute name="action">filterbar.display.rating</attribute>
+              <attribute name="target">8</attribute>
+              <attribute name="accel">&lt;Primary&gt;8</attribute>
             </item>
           </section>
         </submenu>
@@ -154,11 +170,11 @@
           <attribute name="label" translatable="yes">Sort _Events</attribute>
           <section>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
+              <attribute name="label" translatable="yes">_Ascending</attribute>
               <attribute name="action">CommonSortEventsAscending</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsDescending</attribute>
+              <attribute name="label" translatable="yes">D_escending</attribute>
               <attribute name="action">CommonSortEventsDescending</attribute>
             </item>
           </section>

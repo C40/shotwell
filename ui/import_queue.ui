@@ -5,7 +5,7 @@
       <attribute name="label" translatable="yes">_File</attribute>
       <section>
         <item>
-          <attribute name="label" translatable="yes">Stop</attribute>
+          <attribute name="label" translatable="yes">_Stop Import</attribute>
           <attribute name="action">Stop</attribute>
         </item>
       </section>
@@ -48,11 +48,11 @@
           <attribute name="label" translatable="yes">Sort _Events</attribute>
           <section>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsAscending</attribute>
+              <attribute name="label" translatable="yes">_Ascending</attribute>
               <attribute name="action">CommonSortEventsAscending</attribute>
             </item>
             <item>
-              <attribute name="label" translatable="yes">CommonSortEventsDescending</attribute>
+              <attribute name="label" translatable="yes">D_escending</attribute>
               <attribute name="action">CommonSortEventsDescending</attribute>
             </item>
           </section>
